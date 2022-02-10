@@ -8,4 +8,4 @@ A drawing app that allows uses to use fingers to draw shapes based on the shape 
 
 
 ## Screenshots
-<img src="/screenshot/end1.png" width="300"/> <img src="/screenshot/end1.png" width="300"/>
+<img src="/screenshots/end1.png" width="300"/> <img src="/screenshots/end1.png" width="300"/>
