@@ -56,3 +56,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  task: Gradle@2
+  displayName: 'gradlew build'
+  inputs:
+    (...)
+    tasks: 'build'
+    sonarQubeRunAnalysis: true
+    sqGradlePluginVersionChoice: 'specify'
+    sonarQubeGradlePluginVersion: '3.3'
