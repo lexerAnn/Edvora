@@ -20,7 +20,7 @@ class CanvasDraw (context: Context?, attribs: AttributeSet?) : View(context, att
     lateinit var mCanvas: Canvas
     var shape = NON_SELECTED
 
-    var mStartX = 0
+    var mStart = 0
     var mStartY = 0
     var mEndX = 0
     var mEndY = 0
