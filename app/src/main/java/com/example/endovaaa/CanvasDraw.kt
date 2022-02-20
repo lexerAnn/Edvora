@@ -147,8 +147,6 @@ class CanvasDraw (context: Context?, attribs: AttributeSet?) : View(context, att
                 isDrawing = false
                 invalidate()
             }
-            else -> {
-            }
         }
     }
 

@@ -202,24 +202,24 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        red_color.setOnClickListener { view: View? ->
+        red_color.setOnClickListener { _ ->
             pallete_colors.visibility = View.INVISIBLE
             myDrawView?.mPaint?.setColor(Color.RED)
 
         }
-        green_color.setOnClickListener { view: View? ->
+        green_color.setOnClickListener { _ ->
             pallete_colors.visibility = View.INVISIBLE
             myDrawView?.mPaint?.setColor(Color.GREEN)
 
         }
 
-        blue_color.setOnClickListener { view: View? ->
+        blue_color.setOnClickListener { _->
             pallete_colors.visibility = View.INVISIBLE
             myDrawView?.mPaint?.setColor(Color.BLUE)
 
         }
 
-        black_color.setOnClickListener { view: View? ->
+        black_color.setOnClickListener { _ ->
             pallete_colors.visibility = View.INVISIBLE
             myDrawView?.mPaint?.setColor(Color.BLACK)
 
