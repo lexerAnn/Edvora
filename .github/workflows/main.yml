@@ -40,7 +40,7 @@ jobs:
 #          path: app/build/reports/lint-results-debug.html
 
   static-code-analysis:
-    needs: [lint]
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
