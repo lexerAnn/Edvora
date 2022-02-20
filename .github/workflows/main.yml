@@ -35,3 +35,21 @@ jobs:
         with:
           name: index.html
           path: app/build/reports/lint-results-debug.html
+
+  static-code-analysis  :
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      -name: set-up JDK
+       uses: actions/setup-java@v1
+       with:
+          java-version: 11
+
+      -name: SonarCloud Scan
+       run: ./gradlew app:sonarqube -Dsonar.login=${{ secrets.TOKEN }}
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
