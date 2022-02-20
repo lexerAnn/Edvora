@@ -59,8 +59,7 @@ jobs:
   task: Gradle@2
   displayName: 'gradlew build'
   inputs:
-    (...)
-    tasks: 'build'
-    sonarQubeRunAnalysis: true
-    sqGradlePluginVersionChoice: 'specify'
-    sonarQubeGradlePluginVersion: '3.3'
+        tasks: 'build'
+        sonarQubeRunAnalysis: true
+        sqGradlePluginVersionChoice: 'specify'
+        sonarQubeGradlePluginVersion: '3.3'
