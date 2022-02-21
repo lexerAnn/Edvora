@@ -26,7 +26,7 @@ jobs:
       - name: Run Lint
         run: echo Run Lints Test
 
-       Runs a single command using the runners shell
+       #Runs a single command using the runners shell
       - name: Run L int
         run: ./gradlew lintDebug
 
