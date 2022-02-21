@@ -23,6 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout the code
       - uses: actions/checkout@v2
 
       - name: Run Lint
@@ -46,13 +47,40 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
-      - name: set-up JDK
+      - name: Run Stactic Code
+        run: echo Run Lints Test
+
+#      - name: set-up JDK
+#        uses: actions/setup-java@v1
+#        with:
+#          java-version: 11
+#
+#      - name: SonarCloud Scan
+#        run: ./gradlew app:sonarqube -Dsonar.login=${{ secrets.TOKEN }}
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  package:
+    needs: [ static-code-analysis]
+    name: Generate APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: set up JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 11
+         java-version: 1.8
 
-      - name: SonarCloud Scan
-        run: ./gradlew app:sonarqube -Dsonar.login=${{ secrets.TOKEN }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v2
+        with:
+           name: edvora.apk
+           path: app/build/outputs/apk/debug/app-debug.apk
+
+
 
